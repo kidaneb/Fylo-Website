@@ -1,0 +1,49 @@
+@import "tailwindcss";
+@custom-variant hover (&:hover);
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Custom Colors */
+@theme {
+  --color-darkBlue: hsl(217, 28%, 15%);
+  --color-darkBlue1: hsl(218, 28%, 13%);
+  --color-darkBlue2: hsl(216, 53%, 9%);
+  --color-darkBlue3: hsl(219, 30%, 18%);
+  --color-accentCyan: hsl(176, 68%, 64%);
+  --color-accentBlue: hsl(198, 60%, 50%);
+  --color-lightRed: hsl(0, 100%, 63%);
+}
+/* same color but we will use it in darkmode only we can i assign that */
+/* @layer theme {
+  .dark {
+    --color-accentBlue: hsl(360, 100%, 50%);
+  }
+} */
+/* Custom Fonts */
+
+@theme {
+  --font-sans: "Raleway", sans-serif;
+  --font-opensans: "Open Sans", sans-serif;
+}
+
+@theme{
+--image-bgCurvyLightMode:url("../images/bg-curvy-light-mode.svg");
+--backgroundImage:var(--image-bgCurvyLightMode);
+}
+
+@layer theme {
+.dark{
+--image-bgCurvyDarkMode:url("../images/bg-curvy-dark-mode.svg");
+--backgroundImage:var(--image-bgCurvyDarkMode);
+}
+}
+
+/* for quote background */
+@theme{
+  --image-bgQuote:url("../images/bg-quotes.png");
+}
+
+/* Social Address hover effects */
+.ficon:hover {
+  filter: invert(80%) sepia(37%) saturate(7048%) hue-rotate(132deg)
+    brightness(105%) contrast(100%);
+}
